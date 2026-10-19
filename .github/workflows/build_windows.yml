@@ -73,6 +73,21 @@ jobs:
         run: make dependencies
       - name: Install wget and Inno Setup
         run: choco install wget --no-progress && choco install innosetup --no-progress
+      - name: Sustituto de wget basado en curl (copia IE 20798)
+        shell: bash
+        run: |
+          mkdir -p "$HOME/bin"
+          cat > "$HOME/bin/wget" <<'WGET'
+          #!/bin/bash
+          # Soporta: wget -O salida URL   y   wget URL -O salida
+          out=""; url=""
+          while [ $# -gt 0 ]; do
+            case "$1" in -O) out="$2"; shift 2;; *) url="$1"; shift;; esac
+          done
+          curl -fL --retry 3 -o "$out" "$url"
+          WGET
+          chmod +x "$HOME/bin/wget"
+          echo "$HOME/bin" >> "$GITHUB_PATH"
       - name: Download and install the whl from URL
         if: ${{ inputs.whl-url }}
         run: make get-whl whl=${{ inputs.whl-url }}
