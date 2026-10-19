@@ -136,3 +136,4 @@ jobs:
         with:
           name: ${{ steps.get-exe-filename.outputs.final-exe-file-name }}
           path: installer/dist-installer/${{ steps.get-exe-filename.outputs.final-exe-file-name }}
+# Copia de dwisardev para compilar el instalador 0.19.5+ie20798 (IE N° 20798)
