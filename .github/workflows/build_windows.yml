@@ -72,7 +72,7 @@ jobs:
       - name: Install build dependencies
         run: make dependencies
       - name: Install wget and Inno Setup
-        run: choco install wget --no-progress && choco install innosetup --version=6.6.1 --allow-downgrade --no-progress
+        run: choco install wget --no-progress && choco install innosetup --no-progress
       - name: Download and install the whl from URL
         if: ${{ inputs.whl-url }}
         run: make get-whl whl=${{ inputs.whl-url }}
