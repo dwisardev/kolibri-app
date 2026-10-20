@@ -317,6 +317,43 @@ begin
 end;
 
 // Check for existing versions and handle upgrade/downgrade/repair scenarios
+function ParseKolibriVersion(const VersionString: string; var PackedVersion: Int64): Boolean;
+var
+  Index, ComponentCount: Integer;
+  Character: Char;
+  NumericVersion: String;
+begin
+  NumericVersion := '';
+  ComponentCount := 0;
+  Index := 1;
+
+  while (Index <= Length(VersionString)) and (ComponentCount < 4) do
+  begin
+    Character := VersionString[Index];
+    if Character in ['0'..'9'] then
+      NumericVersion := NumericVersion + Character
+    else if Character = '.' then
+    begin
+      NumericVersion := NumericVersion + Character;
+      ComponentCount := ComponentCount + 1;
+    end
+    else
+      Break;
+    Index := Index + 1;
+  end;
+
+  if NumericVersion = '' then
+  begin
+    Result := False;
+    Exit;
+  end;
+
+  if NumericVersion[Length(NumericVersion)] = '.' then
+    Delete(NumericVersion, Length(NumericVersion), 1);
+
+  Result := StrToVersion(NumericVersion, PackedVersion);
+end;
+
 function InitializeSetup(): Boolean;
 var
    InstalledVersionString, InstallerVersionString: string;
@@ -335,8 +372,10 @@ begin
 
    Log(Format('Found installed version: %s. This installer version: %s.', [InstalledVersionString, InstallerVersionString]));
 
-   // Parse both installer and installed version strings for comparison
-   if (not StrToVersion(InstallerVersionString, InstallerVersionPacked)) or (not StrToVersion(InstalledVersionString, InstalledVersionPacked)) then
+   // Python packaging versions may contain suffixes such as a0.dev0+git.38.
+   // Inno Setup compares numeric components, so ignore those suffixes.
+   if (not ParseKolibriVersion(InstallerVersionString, InstallerVersionPacked)) or
+      (not ParseKolibriVersion(InstalledVersionString, InstalledVersionPacked)) then
    begin
       Log('ERROR: Could not parse version strings for comparison.');
       Log(Format('  -> Installer Version String: "%s"', [InstallerVersionString]));
