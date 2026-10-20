@@ -330,7 +330,7 @@ begin
   while (Index <= Length(VersionString)) and (ComponentCount < 4) do
   begin
     Character := VersionString[Index];
-    if Character in ['0'..'9'] then
+    if (Character >= '0') and (Character <= '9') then
       NumericVersion := NumericVersion + Character
     else if Character = '.' then
     begin
