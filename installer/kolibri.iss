@@ -95,8 +95,8 @@ Name: "{#KolibriDataDir}\logs"
 ; WebView2 runtime installer, placed in {tmp} and deleted after installation
 Source: "MicrosoftEdgeWebView2RuntimeInstallerX64.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall
 
-Source: "{#SourceDir}\{#AppName}-{#AppVersion}.exe"; DestDir: "{app}"; DestName: "{#AppExeName}"; Flags: ignoreversion
-Source: "{#SourceDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "{#AppName}-{#AppVersion}.exe"
+Source: "{#SourceDir}\Kolibri-{#AppVersion}.exe"; DestDir: "{app}"; DestName: "{#AppExeName}"; Flags: ignoreversion
+Source: "{#SourceDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "Kolibri-{#AppVersion}.exe"
 Source: "nssm\nssm.exe"; DestDir: "{app}\nssm"; Flags: ignoreversion
 
 [Icons]
