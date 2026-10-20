@@ -121,7 +121,7 @@ exe = EXE(
     codesign_identity=os.environ.get("MAC_CODESIGN_ID"),
     entitlements_file="build_config/entitlements.plist",
     console=False,
-    icon='src/kolibri_app/icons/kolibri.ico'
+    icon='src/kolibri_app/icons/aurora-kids.ico'
 )
 
 coll = COLLECT(

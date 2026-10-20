@@ -1,6 +1,6 @@
 import sys
 
-APP_NAME = "Kolibri"
+APP_NAME = "Aurora Kids"
 
 LINUX = sys.platform.startswith("linux")
 
@@ -9,9 +9,10 @@ MAC = sys.platform.startswith("darwin")
 WINDOWS = sys.platform.startswith("win32")
 
 # Windows specific constants
-TRAY_ICON_ICO = "icons/kolibri.ico"
+TRAY_ICON_ICO = "icons/aurora-kids.ico"
 SERVICE_NAME = "Kolibri"
-# Explicit AppUserModelID for notification attribution. Without it, Windows
+# Keep the existing AppUserModelID so upgrades do not create a second Windows
+# application identity.
 # auto-generates an identity for the tray icon and renders the notification
 # header from a cached copy of the tray HICON, which can show with swapped
 # colours (see issue #184). Registered in the registry with a DisplayName and

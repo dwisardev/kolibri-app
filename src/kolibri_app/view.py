@@ -169,13 +169,13 @@ class KolibriView(object):
         primary_menu = wx.Menu()
         self.add_menu_item(
             primary_menu,
-            _("Open Kolibri in Browser"),
+            _("Open Aurora Kids in Browser"),
             handler=self.on_open_in_browser,
         )
         kolibri_home_readable = _kolibri_home_readable()
         open_home_item = self.add_menu_item(
             primary_menu,
-            _("Open Kolibri Home Folder"),
+            _("Open Aurora Kids Home Folder"),
             handler=self.on_open_kolibri_home,
         )
         open_home_item.Enable(kolibri_home_readable)
@@ -183,7 +183,7 @@ class KolibriView(object):
         if MAC:
             self.add_menu_item(
                 primary_menu,
-                _("About Kolibri…"),
+                _("About Aurora Kids…"),
                 handler=self.on_about,
                 item_id=wx.ID_ABOUT,
             )

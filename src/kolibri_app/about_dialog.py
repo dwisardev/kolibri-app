@@ -16,7 +16,7 @@ FORUMS_URL = "https://community.learningequality.org/"
 class AboutDialog(wx.Dialog):
     def __init__(self, parent):
         super().__init__(
-            parent, title=_("About Kolibri"), style=wx.DEFAULT_DIALOG_STYLE
+            parent, title=_("About Aurora Kids"), style=wx.DEFAULT_DIALOG_STYLE
         )
         sizer = wx.BoxSizer(wx.VERTICAL)
 
@@ -26,7 +26,7 @@ class AboutDialog(wx.Dialog):
             )
 
         try:
-            icon_path = files("kolibri_app") / "icons" / "kolibri-icon.png"
+            icon_path = files("kolibri_app") / "icons" / "aurora-kids.png"
             image = wx.Image(str(icon_path), wx.BITMAP_TYPE_PNG).Scale(
                 64, 64, wx.IMAGE_QUALITY_HIGH
             )
@@ -37,7 +37,7 @@ class AboutDialog(wx.Dialog):
 
         add_centered_text(_("App version: %(version)s") % {"version": app_version}, 8)
         add_centered_text(
-            _("Kolibri version: %(version)s") % {"version": kolibri.__version__}, 4
+            _("Kolibri base version: %(version)s") % {"version": kolibri.__version__}, 4
         )
 
         docs_link = wx.adv.HyperlinkCtrl(self, label=_("Documentation"), url=DOCS_URL)
@@ -55,6 +55,9 @@ class AboutDialog(wx.Dialog):
 
         add_centered_text(
             _("© %(year)s Learning Equality") % {"year": date.today().year}, 12
+        )
+        add_centered_text(
+            _("Aurora Kids is based on Kolibri © Learning Equality, MIT license"), 4
         )
 
         close_btn = wx.Button(self, wx.ID_OK, _("Close"))

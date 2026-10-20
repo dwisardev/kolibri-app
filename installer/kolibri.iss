@@ -1,13 +1,14 @@
 ; === Preprocessor Definitions: A single source of truth for configuration ===
-#define AppName "Kolibri"
+#define AppName "Aurora Kids"
+#define InstallDirectoryName "Kolibri"
 #define AppPublisher "Learning Equality"
 #define AppPublisherURL "https://learningequality.org/"
 #define AppExeName "KolibriApp.exe"
-#define ServiceName AppName
+#define ServiceName "Kolibri"
 #ifndef AppVersion
   #error "The AppVersion definition must be passed to the compiler via the command line, e.g., /DAppVersion=x.y.z"
 #endif
-#define SourceDir "..\dist\" + AppName + "-" + AppVersion
+#define SourceDir "..\dist\" + InstallDirectoryName + "-" + AppVersion
 #define KolibriDataDir "{commonappdata}\kolibri"
 #define NssmExePath "{app}\nssm\nssm.exe"
 #define TaskkillExePath "{sys}\taskkill.exe"
@@ -29,9 +30,9 @@ AppName={#AppName}
 AppVersion={#AppVersion}
 AppPublisher={#AppPublisher}
 AppPublisherURL={#AppPublisherURL}
-DefaultDirName={autopf64}\{#AppName}
+DefaultDirName={autopf64}\{#InstallDirectoryName}
 OutputDir=dist-installer
-OutputBaseFilename=kolibri-setup-{#AppVersion}
+OutputBaseFilename=aurora-kids-setup-{#AppVersion}
 WizardStyle=modern
 PrivilegesRequired=admin
 ArchitecturesInstallIn64BitMode=x64compatible
