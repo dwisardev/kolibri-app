@@ -1,6 +1,9 @@
 ; === Preprocessor Definitions: A single source of truth for configuration ===
 #define AppName "Aurora Kids"
 #define InstallDirectoryName "Kolibri"
+; Nombre VISIBLE de la carpeta de instalacion (solo para instalaciones nuevas).
+; InstallDirectoryName se mantiene porque nombra la carpeta dist de PyInstaller.
+#define DefaultInstallFolderName "Aurora Kids"
 #define AppPublisher "Learning Equality"
 #define AppPublisherURL "https://learningequality.org/"
 #define AppExeName "KolibriApp.exe"
@@ -30,7 +33,7 @@ AppName={#AppName}
 AppVersion={#AppVersion}
 AppPublisher={#AppPublisher}
 AppPublisherURL={#AppPublisherURL}
-DefaultDirName={autopf64}\{#InstallDirectoryName}
+DefaultDirName={autopf64}\{#DefaultInstallFolderName}
 OutputDir=dist-installer
 OutputBaseFilename=aurora-kids-setup-{#AppVersion}
 WizardStyle=modern
