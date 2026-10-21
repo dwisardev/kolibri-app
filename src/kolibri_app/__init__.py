@@ -7,6 +7,12 @@ from kolibri_app.constants import WINDOWS
 
 os.environ["KOLIBRI_INSTALLER_VERSION"] = __version__
 
+# Aurora Kids funciona sin internet: se apaga la telemetria (ping a
+# telemetry.learningequality.org y avisos de actualizacion) desde el arranque.
+# Es una variable de entorno, no un archivo: no pisa un options.ini existente
+# y quien administre el equipo puede cambiarla definiendo KOLIBRI_DISABLE_PING.
+os.environ.setdefault("KOLIBRI_DISABLE_PING", "1")
+
 # If on Windows and KOLIBRI_HOME is not already set externally...
 if WINDOWS and "KOLIBRI_HOME" not in os.environ:
     # Check if we are running in a PyInstaller bundle.
