@@ -8,6 +8,7 @@ import wx.adv
 
 from kolibri_app._version import __version__ as app_version
 from kolibri_app.i18n import _
+from kolibri_app.i18n import catalog_status
 
 DOCS_URL = "https://kolibri.readthedocs.io/en/latest/"
 FORUMS_URL = "https://community.learningequality.org/"
@@ -39,6 +40,8 @@ class AboutDialog(wx.Dialog):
         add_centered_text(
             _("Kolibri base version: %(version)s") % {"version": kolibri.__version__}, 4
         )
+
+        add_centered_text("Idioma: %s" % catalog_status, 4)
 
         docs_link = wx.adv.HyperlinkCtrl(self, label=_("Documentation"), url=DOCS_URL)
         forums_link = wx.adv.HyperlinkCtrl(

@@ -60,4 +60,10 @@ if "language" not in locale_info:
     locale_info["language"] = "en"
 _ = t.gettext
 
+# Para el dialogo "Acerca de": que catalogo se cargo de verdad (diagnostico).
+catalog_status = "{} ({})".format(
+    locale_info["language"],
+    mo_file if mo_file is not None and mo_file.is_file() else "sin catalogo",
+)
+
 logging.debug("Locale info = {}".format(locale_info))
