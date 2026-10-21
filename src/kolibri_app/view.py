@@ -254,7 +254,7 @@ class KolibriView(object):
         if not MAC:
             self.add_menu_item(
                 help_menu,
-                _("About Kolibri…"),
+                _("About Aurora Kids…"),
                 handler=self.on_about,
             )
         menu_bar.Append(help_menu, _("Help"))
@@ -359,7 +359,9 @@ class KolibriView(object):
             self.is_showing_loader = False
 
     def OnTitleChanged(self, event):
-        self.view.SetTitle(event.GetString())
+        # El titulo de la pagina web (p. ej. "Aprender") no debe reemplazar
+        # el nombre de la aplicacion en la barra de la ventana.
+        self.view.SetTitle(APP_NAME)
 
     def on_documentation(self, event):
         webbrowser.open("https://kolibri.readthedocs.io/en/latest/")
