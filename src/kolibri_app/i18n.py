@@ -30,6 +30,11 @@ for lang in languages:
         if nelang not in nelangs:
             nelangs.append(nelang)
 
+# Cualquier variante regional del espanol (es_PE, es_MX, es_AR...) sin catalogo
+# propio usa el catalogo es_419 (espanol latinoamericano) antes de caer a ingles.
+if "es" in nelangs and "es_419" not in nelangs:
+    nelangs.insert(nelangs.index("es") + 1, "es_419")
+
 mo_file = None
 
 locale_dir = files("kolibri_app") / "locales"

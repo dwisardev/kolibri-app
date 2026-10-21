@@ -6,7 +6,7 @@ msgstr ""
 "PO-Revision-Date: 2019-12-04 19:25\n"
 "Last-Translator: learningequality\n"
 "Language-Team: Spanish\n"
-"Language: es_ES\n"
+"Language: es_419\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,95 +16,164 @@ msgstr ""
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: macapp.pot\n"
 
-#: src/main.py:190
 msgid "File"
 msgstr "Archivo"
 
-#: src/main.py:191
-msgid "New Window"
-msgstr "Nueva ventana"
-
-#: src/main.py:192
-msgid "Close Window"
-msgstr "Cerrar ventana"
-
-#: src/main.py:194
-msgid "Open Kolibri Home Folder"
-msgstr "Abrir carpeta de usuario de Kolibri"
-
-#: src/main.py:198
 msgid "Edit"
 msgstr "Edición"
 
-#: src/main.py:199
-msgid "Undo"
-msgstr "Deshacer"
-
-#: src/main.py:200
-msgid "Redo"
-msgstr "Rehacer"
-
-#: src/main.py:202
-msgid "Cut"
-msgstr "Cortar"
-
-#: src/main.py:203
-msgid "Copy"
-msgstr "Copiar"
-
-#: src/main.py:204
-msgid "Paste"
-msgstr "Pegar"
-
-#: src/main.py:205
-msgid "Select All"
-msgstr "Seleccionar todo"
-
-#: src/main.py:208
 msgid "View"
-msgstr "Visualización"
+msgstr "Ver"
 
-#: src/main.py:209
-msgid "Reload"
-msgstr "Recargar"
-
-#: src/main.py:210
-msgid "Actual Size"
-msgstr "Tamaño actual"
-
-#: src/main.py:211
-msgid "Zoom In"
-msgstr "Aumentar tamaño"
-
-#: src/main.py:212
-msgid "Zoom Out"
-msgstr "Reducir tamaño"
-
-#: src/main.py:214
-msgid "Open in Browser"
-msgstr "Abrir en el navegador"
-
-#: src/main.py:217
-msgid "History"
-msgstr "Historial"
-
-#: src/main.py:218
-msgid "Back"
-msgstr "Atrás"
-
-#: src/main.py:219
-msgid "Forward"
-msgstr "Adelante"
-
-#: src/main.py:222
 msgid "Help"
 msgstr "Ayuda"
 
-#: src/main.py:223
+msgid "Open Aurora Kids in Browser"
+msgstr "Abrir Aurora Kids en el navegador"
+
+msgid "Open Aurora Kids Home Folder"
+msgstr "Abrir la carpeta de datos de Aurora Kids"
+
+msgid "About Aurora Kids…"
+msgstr "Acerca de Aurora Kids…"
+
+msgid "About Kolibri…"
+msgstr "Acerca de Aurora Kids…"
+
+msgid "About Aurora Kids"
+msgstr "Acerca de Aurora Kids"
+
+msgid "Cut\tCtrl+X"
+msgstr "Cortar\tCtrl+X"
+
+msgid "Copy\tCtrl+C"
+msgstr "Copiar\tCtrl+C"
+
+msgid "Paste\tCtrl+V"
+msgstr "Pegar\tCtrl+V"
+
+msgid "Select All\tCtrl+A"
+msgstr "Seleccionar todo\tCtrl+A"
+
+msgid "Reload"
+msgstr "Recargar"
+
+msgid "Actual Size\tCtrl+0"
+msgstr "Tamaño real\tCtrl+0"
+
+msgid "Zoom In\tCtrl++"
+msgstr "Acercar\tCtrl++"
+
+msgid "Zoom Out\tCtrl+-"
+msgstr "Alejar\tCtrl+-"
+
 msgid "Documentation"
 msgstr "Documentación"
 
-#: src/main.py:224
 msgid "Community Forums"
 msgstr "Foros de la comunidad"
 
+msgid "Community Forum"
+msgstr "Foro de la comunidad"
+
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+msgid "Show Logs"
+msgstr "Mostrar registros"
+
+msgid "Open Developer Tools"
+msgstr "Abrir herramientas de desarrollo"
+
+msgid "App version: %(version)s"
+msgstr "Versión de la aplicación: %(version)s"
+
+msgid "Kolibri base version: %(version)s"
+msgstr "Versión base de Kolibri: %(version)s"
+
+msgid "© %(year)s Learning Equality"
+msgstr "© %(year)s Learning Equality"
+
+msgid "Aurora Kids is based on Kolibri © Learning Equality, MIT license"
+msgstr "Aurora Kids está basado en Kolibri © Learning Equality, licencia MIT"
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "Open UI"
+msgstr "Abrir Aurora Kids"
+
+msgid "Exit"
+msgstr "Salir"
+
+msgid "Info"
+msgstr "Información"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Kolibri"
+msgstr "Aurora Kids"
+
+msgid "Kolibri is starting... Please wait."
+msgstr "Aurora Kids se está iniciando... Espere un momento."
+
+msgid "Kolibri is running."
+msgstr "Aurora Kids se está ejecutando."
+
+msgid "Kolibri Ready"
+msgstr "Aurora Kids está listo"
+
+msgid "Kolibri failed to start.\nCheck logs at: {}"
+msgstr "Aurora Kids no pudo iniciar.\nRevise los registros en: {}"
+
+msgid "Kolibri Error"
+msgstr "Error de Aurora Kids"
+
+msgid "Kolibri server is not ready yet."
+msgstr "El servidor de Aurora Kids aún no está listo."
+
+msgid "Open Kolibri UI on logon"
+msgstr "Abrir Aurora Kids al iniciar sesión"
+
+msgid "Run Kolibri service on start"
+msgstr "Iniciar el servicio de Aurora Kids al encender la PC"
+
+msgid "Run Kolibri service on start (Unavailable)"
+msgstr "Iniciar el servicio de Aurora Kids al encender la PC (no disponible)"
+
+msgid "Kolibri UI Startup Updated"
+msgstr "Inicio de Aurora Kids actualizado"
+
+msgid "Kolibri UI Startup Error"
+msgstr "Error en el inicio de Aurora Kids"
+
+msgid "Opening the UI on logon has been {}."
+msgstr "La apertura al iniciar sesión se ha {}."
+
+msgid "Failed to change the UI startup setting."
+msgstr "No se pudo cambiar la opción de inicio."
+
+msgid "Administrator rights are required to change this setting."
+msgstr "Se necesitan permisos de administrador para cambiar esta opción."
+
+msgid "An error occurred while changing the service setting: {}"
+msgstr "Ocurrió un error al cambiar la opción del servicio: {}"
+
+msgid "Kolibri Service Updated"
+msgstr "Servicio de Aurora Kids actualizado"
+
+msgid "Kolibri Service Error"
+msgstr "Error del servicio de Aurora Kids"
+
+msgid "Automatic startup has been {}."
+msgstr "El inicio automático se ha {}."
+
+msgid "Failed to update the service startup setting."
+msgstr "No se pudo actualizar el inicio del servicio."
+
+msgid "enabled"
+msgstr "activado"
+
+msgid "disabled"
+msgstr "desactivado"

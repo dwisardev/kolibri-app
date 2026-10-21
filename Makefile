@@ -73,7 +73,7 @@ dependencies:
 build-mac-app:
 	$(MAKE) pyinstaller
 
-pyinstaller: clean
+pyinstaller: clean compile-mo
 	mkdir -p logs
 	$(PYTHON_EXEC) -OO -m PyInstaller kolibri.spec
 
@@ -176,7 +176,7 @@ update-translations:
 	@echo "Update complete. Please review update_report.txt and commit the changes to en.isl."
 
 compile-mo:
-	find src/kolibri_app/locales -name LC_MESSAGES -exec msgfmt {}/wxapp.po -o {}/wxapp.mo \;
+	$(PYTHON_EXEC) scripts/compile_mo.py src/kolibri_app/locales
 
 .PHONY: wxapp-extract-strings
 wxapp-extract-strings:
