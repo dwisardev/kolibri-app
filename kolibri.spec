@@ -18,7 +18,9 @@ kolibri_version = kolibri.__version__
 name = "Kolibri-{}".format(kolibri_version)
 
 locale_datas = [
-    (mo_file, os.path.sep.join(os.path.dirname(mo_file).split(os.path.sep)[1:]))
+    # normpath: en Windows glob() mezcla "/" y "\", y sin normalizar el destino
+    # quedaba "es_419/LC_MESSAGES" en vez de "kolibri_app/locales/es_419/...".
+    (mo_file, os.path.sep.join(os.path.dirname(os.path.normpath(mo_file)).split(os.path.sep)[1:]))
     for mo_file in glob('src/kolibri_app/locales/**/LC_MESSAGES/*.mo')
 ]
 
